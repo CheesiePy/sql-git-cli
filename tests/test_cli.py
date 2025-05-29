@@ -46,7 +46,7 @@ def test_init_creates_git_dir(temp_repo):
     assert proc.returncode == 0
     assert proc.stderr == ""
     assert "Initialized empty git repository" in proc.stdout
-    assert (temp_repo / ".git").is_dir()
+    assert (temp_repo / ".sgit").is_dir()
     # init again should not error, but indicate already initialized
     proc2 = run_cli(["init"], temp_repo)
     assert proc2.returncode == 0
@@ -69,7 +69,7 @@ def test_add_commit_and_db_entries(temp_repo):
     assert "Committed: first commit" in proc.stdout
 
     # inspect DB
-    db_path = temp_repo / ".git" / "git.sqlite3"
+    db_path = temp_repo / ".sgit" / "git.sqlite3"
     conn = connect_db(str(db_path))
     cur = conn.cursor()
     cur.execute("SELECT COUNT(*) FROM commits")
@@ -101,7 +101,7 @@ def test_recursive_add_support(temp_repo):
     assert "Committed: add src" in proc.stdout
 
     # verify code_lines count = 3 + 2 = 5
-    db_path = temp_repo / ".git" / "git.sqlite3"
+    db_path = temp_repo / ".sgit" / "git.sqlite3"
     conn = connect_db(str(db_path))
     cur = conn.cursor()
     cur.execute("SELECT COUNT(*) FROM code_lines")
