@@ -6,12 +6,12 @@ A minimal Git-like version control system built with **Python** and **SQLite**, 
 
 ## 🚀 Features
 
-* **`git init`**: Initialize a new repository (creates `.git/` and SQLite DB)
-* **`git add <file|folder>`**: Stage single files or recursively add entire directories
-* **`git commit "<message>"`**: Commit staged changes with a message
-* **`git branch <name>`**: Create a new branch pointing to the latest commit
-* **`git checkout <branch|commit>`**: Switch working directory to a branch or commit
-* **`git blame <branch|commit> <file>`**: Annotate each line of a file with the last commit that changed it
+* **`sgit init`**: Initialize a new repository (creates `.sgit/` and SQLite DB)
+* **`sgit add <file|folder>`**: Stage single files or recursively add entire directories
+* **`sgit commit "<message>"`**: Commit staged changes with a message
+* **`sgit branch <name>`**: Create a new branch pointing to the latest commit
+* **`sgit checkout <branch|commit>`**: Switch working directory to a branch or commit
+* **`sgit blame <branch|commit> <file>`**: Annotate each line of a file with the last commit that changed it
 
 ---
 
@@ -28,7 +28,7 @@ A minimal Git-like version control system built with **Python** and **SQLite**, 
 1. **Clone the repo**
 
    ```bash
-   git clone https://github.com/YourUsername/SQL-Git-CLI.git
+   git clone https://github.com/CheesiePy/SQL-Git-CLI.git
    cd SQL-Git-CLI
    ```
 
@@ -50,7 +50,7 @@ A minimal Git-like version control system built with **Python** and **SQLite**, 
    Add to your `~/.bashrc` or `~/.zshrc`:
 
    ```bash
-   alias git="python3 $(pwd)/cli.py"
+   alias sgit="$(pwd)/sgit.sh"
    source ~/.bashrc
    ```
 
@@ -61,40 +61,40 @@ A minimal Git-like version control system built with **Python** and **SQLite**, 
 1. **Initialize repository**
 
    ```bash
-   git init
+   sgit init
    # Creates .git/ and initializes SQLite DB
    ```
 
 2. **Stage files**
 
    ```bash
-   git add file1.txt          # Single file
-   git add src/               # Recursively stage all files in src/
+   sgit add file1.txt          # Single file
+   sgit add src/               # Recursively stage all files in src/
    ```
 
 3. **Commit changes**
 
    ```bash
-   git commit "Initial commit"
+   sgit commit "Initial commit"
    ```
 
 4. **Branching**
 
    ```bash
-   git branch feature-x
+   sgit branch feature-x
    ```
 
 5. **Checkout**
 
    ```bash
-   git checkout feature-x     # Switch to branch
-   git checkout 2             # Switch to commit ID 2
+   sgit checkout feature-x     # Switch to branch
+   sgit checkout 2             # Switch to commit ID 2
    ```
 
 6. **Blame**
 
    ```bash
-   git blame main file1.txt   # Outputs file1.txt.blame.csv
+   sgit blame main file1.txt   # Outputs file1.txt.blame.csv
    ```
 
 ---
