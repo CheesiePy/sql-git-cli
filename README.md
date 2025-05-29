@@ -62,7 +62,7 @@ A minimal Git-like version control system built with **Python** and **SQLite**, 
 
    ```bash
    sgit init
-   # Creates .git/ and initializes SQLite DB
+   # Creates .sgit/ and initializes SQLite DB
    ```
 
 2. **Stage files**
