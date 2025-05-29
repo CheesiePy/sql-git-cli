@@ -15,7 +15,7 @@ sql-git-cli/
 │   ├── test_cli.py         # Basic CLI tests
 │
 ├── scripts/
-│   └── git.sh              # Bash script to simulate git CLI
+│   └── sgit.sh              # Bash script to simulate git CLI
 │
 ├── sql_murder_mistery.sql
 ├── requirements.txt

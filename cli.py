@@ -28,7 +28,7 @@ def init_repo():
         conn = connect_db(db_path)
         conn.executescript(f.read())
 
-    print("Initialized empty git repository in .git/")
+    print("Initialized empty git repository in .sgit/")
 
 def add_file(path):
     db_path = get_db_path()
@@ -37,15 +37,10 @@ def add_file(path):
     print(f"Staged: {path}")
 
 def add_entry(path):
-    """
-    If `path` is a directory, recursively stage each file under it.
-    Skips .git/, venv/, and __pycache__/, so you won’t try to read binaries.
-    Otherwise, stage the single file.
-    """
     if os.path.isdir(path):
         for root, dirs, files in os.walk(path):
-            # don’t descend into these directories
-            for skip in (".git", "venv", "__pycache__"):
+            # Skip metadata and caches
+            for skip in (".sgit", "venv", "__pycache__", ".pytest_cache"):
                 if skip in dirs:
                     dirs.remove(skip)
 
