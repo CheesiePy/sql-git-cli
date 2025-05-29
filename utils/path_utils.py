@@ -9,7 +9,7 @@ def find_git_root(start_path=None):
     current = os.path.abspath(start_path or os.getcwd())
     
     while current != os.path.dirname(current):  # until reaching root
-        if os.path.isdir(os.path.join(current, ".git")):
+        if os.path.isdir(os.path.join(current, ".sgit")):
             return current
         current = os.path.dirname(current)
     

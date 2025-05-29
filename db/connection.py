@@ -1,7 +1,7 @@
 import os
 import sqlite3
 
-GIT_DIR = ".git"
+GIT_DIR = ".sgit"
 DB_NAME = "git.sqlite3"
 
 def get_db_path():

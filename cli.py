@@ -11,7 +11,7 @@ def init_repo():
     print(f"DEBUG: init_repo running in: {working_dir}")  # you can remove this once verified
 
     # Create .git folder in that directory
-    git_path = os.path.join(working_dir, ".git")
+    git_path = os.path.join(working_dir, ".sgit")
     if os.path.exists(git_path):
         print("Repository already initialized.")
         return
