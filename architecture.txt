@@ -1,0 +1,22 @@
+sql-git-cli/
+│
+├── .git/                    # Created after git init
+│
+├── cli.py                  # Main CLI entry point with all commands
+├── db/
+│   ├── init_db.sql          # Initializes SQLite DB schema
+│   ├── connection.py       # SQLite connection manager
+│
+├── utils/
+│   ├── file_utils.py       # File reading + staging helpers
+│   ├── path_utils.py       # Path resolution & .git finder
+│
+├── tests/
+│   ├── test_cli.py         # Basic CLI tests
+│
+├── scripts/
+│   └── git.sh              # Bash script to simulate git CLI
+│
+├── sql_murder_mistery.sql
+├── requirements.txt
+└── README.md
